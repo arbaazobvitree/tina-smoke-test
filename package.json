@@ -3,19 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
+    "build": "NEXT_PUBLIC_TINA_CLIENT_ID=64d0fe12-0ef3-4db0-881e-c32316b75907 TINA_TOKEN=c5848f50396958e38a5b66265de269a41031fe8f tinacms build && next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@tinacms/mdx": "^2.1.4",
     "next": "16.2.6",
+    "next-tinacms-cloudinary": "^25.0.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "tinacms": "^3.8.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@tinacms/cli": "^2.3.1",
+    "@types/node": "^20.19.41",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
